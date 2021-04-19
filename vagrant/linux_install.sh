@@ -1,7 +1,7 @@
-#!/bin/sh
+#!/bin/sh -x
 
 echo "Installing packages"
-sudo rm /etc/motd
+sudo rm -f /etc/motd
 
 sudo apt-get update
 sudo apt-get install -y direnv make apt-transport-https \
