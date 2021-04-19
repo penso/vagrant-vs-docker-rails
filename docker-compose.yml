@@ -1,0 +1,31 @@
+# ./docker-compose.yml
+version: '3.6'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - USER_ID=${USER_ID}
+        - GROUP_ID=${GROUP_ID}
+    user: "${USER_ID}:${GROUP_ID}"
+    command: ./entrypoint.sh
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    links:
+      - db
+    tty: true
+    stdin_open: true
+  db:
+    image: postgres:12
+    restart: always
+    user: "${USER_ID}:${GROUP_ID}"
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - /etc/passwd:/etc/passwd:ro
+      - db:/var/lib/postgresql/data:delegated
+volumes:
+  db:

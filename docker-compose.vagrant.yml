@@ -1,0 +1,6 @@
+# ./docker-compose.yml
+version: '3.6'
+services:
+  db:
+    volumes:
+      - /home/vagrant/db:/var/lib/postgresql/data

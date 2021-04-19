@@ -1,0 +1,9 @@
+# ./docker-compose.yml
+version: '3.6'
+services:
+  app:
+    environment:
+      PYTHON: /usr/bin/python2
+  db:
+    volumes:
+      - .docker-volumes/db:/var/lib/postgresql/data
