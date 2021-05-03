@@ -26,6 +26,21 @@ docker-compose run app bundle exec rake test  0.47s user 0.13s system 3% cpu 16.
 uname -m
 aarch64
 
+
+Native psql
+
+Finished in 0.523297s, 13.3767 runs/s, 17.1986 assertions/s.
+Finished in 0.313440s, 22.3328 runs/s, 28.7136 assertions/s.
+Finished in 0.313846s, 22.3039 runs/s, 28.6765 assertions/s.
+Finished in 0.256659s, 27.2735 runs/s, 35.0660 assertions/s.
+Finished in 0.315064s, 22.2177 runs/s, 28.5656 assertions/s.
+
+make tests  1.14s user 0.51s system 159% cpu 1.037 total
+make tests  1.16s user 0.51s system 158% cpu 1.052 total
+make tests  1.15s user 0.51s system 162% cpu 1.023 total
+make tests  1.15s user 0.49s system 159% cpu 1.025 total
+make tests  1.15s user 0.52s system 175% cpu 0.951 total
+
 ------------------------------------------------------------------------
 
 MBP16 2019, 32G RAM, 8-core Intel Core i9 2.3Ghz
