@@ -7,17 +7,39 @@ different environment.
 
 ------------------------------------------------------------------------
 
-Mac mini M1 16G RAM
+# Mac mini M1 16G RAM
 
 Parallels M1 + Debian 4.19.0 arm64 + Docker
-docker-compose run app bundle exec rake test  0.20s user 0.02s system 3% cpu 6.462 total
+
+Finished in 5.162292s, 1.3560 runs/s, 1.7434 assertions/s.
+Finished in 5.298611s, 1.3211 runs/s, 1.6986 assertions/s.
+Finished in 0.303921s, 23.0323 runs/s, 29.6129 assertions/s.
+Finished in 5.173234s, 1.3531 runs/s, 1.7397 assertions/s.
+Finished in 0.201871s, 34.6756 runs/s, 44.5829 assertions/s.
+
+docker-compose run app bundle exec make tests  0.20s user 0.03s system 3% cpu 6.979 total
+docker-compose run app bundle exec make tests  0.20s user 0.03s system 3% cpu 6.664 total
+docker-compose run app bundle exec make tests  0.22s user 0.02s system 3% cpu 6.668 total
+docker-compose run app bundle exec make tests  0.20s user 0.04s system 3% cpu 6.499 total
+docker-compose run app bundle exec make tests  0.20s user 0.03s system 3% cpu 6.566 total
 
 with docker-compose already running:
 
 docker-compose run app bundle exec rake test  0.20s user 0.02s system 3% cpu 6.062 total
 
-Mac Docker Desktop 3.3.1 
-docker-compose run app bundle exec rake test  0.48s user 0.11s system 2% cpu 20.906 total
+## Mac Docker Desktop 3.3.1 
+
+Finished in 1.104405s, 6.3383 runs/s, 8.1492 assertions/s.
+Finished in 5.209888s, 1.3436 runs/s, 1.7275 assertions/s.
+Finished in 6.001199s, 1.1664 runs/s, 1.4997 assertions/s.
+Finished in 1.104785s, 6.3361 runs/s, 8.1464 assertions/s.
+Finished in 6.208288s, 1.1275 runs/s, 1.4497 assertions/s.
+
+docker-compose run app bundle exec make tests  0.44s user 0.14s system 2% cpu 21.385 total
+docker-compose run app bundle exec make tests  0.45s user 0.13s system 2% cpu 20.381 total
+docker-compose run app bundle exec make tests  0.43s user 0.10s system 2% cpu 20.037 total
+docker-compose run app bundle exec make tests  0.44s user 0.10s system 2% cpu 21.316 total
+docker-compose run app bundle exec make tests  0.44s user 0.09s system 2% cpu 22.136 total
 
 with docker-compose already running:
 
@@ -27,7 +49,7 @@ uname -m
 aarch64
 
 
-Native psql
+## Native MacOS + postgres + redis
 
 Finished in 0.523297s, 13.3767 runs/s, 17.1986 assertions/s.
 Finished in 0.313440s, 22.3328 runs/s, 28.7136 assertions/s.
