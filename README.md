@@ -65,34 +65,54 @@ make tests  1.15s user 0.52s system 175% cpu 0.951 total
 
 ------------------------------------------------------------------------
 
-MBP16 2019, 32G RAM, 8-core Intel Core i9 2.3Ghz
+# MBP16 2019, 32G RAM, 8-core Intel Core i9 2.3Ghz
 
-Vagrant 2.2.15 + Virtualbox 6.1.16 + Debian buster64 + Docker
+## Vagrant 2.2.15 + Virtualbox 6.1.16 + Debian buster64 + Docker
 
-time docker-compose run app bundle exec rake test
-real	0m4.127s
-user	0m0.244s
-sys	0m0.028s
+### Rsync folders
 
-with docker-compose already running:
-real	0m3.789s
-user	0m0.229s
-sys	0m0.036s
+Finished in 0.511442s, 13.6868 runs/s, 17.5973 assertions/s.
+Finished in 0.511852s, 13.6758 runs/s, 17.5832 assertions/s.
+Finished in 0.504878s, 13.8647 runs/s, 17.8261 assertions/s.
+Finished in 0.507786s, 13.7853 runs/s, 17.7240 assertions/s.
+Finished in 0.503487s, 13.9030 runs/s, 17.8753 assertions/s.
 
-with rsync synced folder:
-real	0m3.584s
-user	0m0.199s
-sys	0m0.071s
-with rsync synced folder, with docker-compose already running:
-real	0m3.525s
-user	0m0.221s
-sys	0m0.044s
+time docker-compose run app bundle exec rake test 5.708s
+time docker-compose run app bundle exec rake test 4.638s
+time docker-compose run app bundle exec rake test 4.513s
+time docker-compose run app bundle exec rake test 4.447s
+time docker-compose run app bundle exec rake test 4.729s
 
-Mac Docker Desktop 3.2.2
+## Mac Docker Desktop 3.2.2
 
-docker-compose run app bundle exec rake test  0.49s user 0.10s system 4% cpu 13.865 total
+Finished in 2.407545s, 2.9075 runs/s, 3.7382 assertions/s.
+Finished in 1.207119s, 5.7989 runs/s, 7.4558 assertions/s.
+Finished in 1.205693s, 5.8058 runs/s, 7.4646 assertions/s.
+Finished in 1.206704s, 5.8009 runs/s, 7.4583 assertions/s.
+Finished in 1.207499s, 5.7971 runs/s, 7.4534 assertions/s.
+
+docker-compose run app bundle exec rake test  0.49s user 0.20s system 4% cpu 16.017 total
+docker-compose run app bundle exec rake test  0.46s user 0.09s system 3% cpu 13.805 total
+docker-compose run app bundle exec rake test  0.48s user 0.10s system 4% cpu 13.298 total
+docker-compose run app bundle exec rake test  0.49s user 0.10s system 4% cpu 14.724 total
+docker-compose run app bundle exec rake test  0.47s user 0.09s system 4% cpu 13.276 total
 
 with docker-compose already running:
 
 docker-compose run app bundle exec rake test  0.49s user 0.10s system 6% cpu 9.169 total
 uname -m: x86_64
+
+## Native MacOS + postgres + redis
+
+
+Finished in 0.410070s, 17.0703 runs/s, 21.9475 assertions/s.
+Finished in 0.324919s, 21.5438 runs/s, 27.6992 assertions/s.
+Finished in 0.415290s, 16.8557 runs/s, 21.6716 assertions/s.
+Finished in 0.408854s, 17.1210 runs/s, 22.0127 assertions/s.
+Finished in 0.409605s, 17.0896 runs/s, 21.9724 assertions/s.
+
+bundle exec rake test  2.47s user 1.17s system 172% cpu 2.119 total
+bundle exec rake test  2.33s user 1.08s system 169% cpu 2.018 total
+bundle exec rake test  2.47s user 1.16s system 167% cpu 2.163 total
+bundle exec rake test  2.35s user 1.10s system 170% cpu 2.032 total
+bundle exec rake test  2.37s user 1.14s system 168% cpu 2.083 total
