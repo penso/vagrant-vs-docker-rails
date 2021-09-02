@@ -7,6 +7,7 @@ different environment.
 
 ------------------------------------------------------------------------
 
+```
 # Mac mini M1 16G RAM
 
 Parallels M1 + Debian 4.19.0 arm64 + Docker
@@ -116,3 +117,4 @@ bundle exec rake test  2.33s user 1.08s system 169% cpu 2.018 total
 bundle exec rake test  2.47s user 1.16s system 167% cpu 2.163 total
 bundle exec rake test  2.35s user 1.10s system 170% cpu 2.032 total
 bundle exec rake test  2.37s user 1.14s system 168% cpu 2.083 total
+```
